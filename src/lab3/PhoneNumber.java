@@ -2,14 +2,13 @@ package lab3;
 
 enum Type
 {
-    мобильный,
-    рабочий,
-    домашний
+    mobile,
+    office,
+    home
 }
 
 
 //Класс PhoneNumber хранит информацию о телефонном номере: сам номер и его тип
-
 
 public class PhoneNumber {
     private String Number;

@@ -21,55 +21,31 @@ public class TelephoneBook {
     }
     //Удаление контакта по индексу (Здесь и далее предполагается, что пользователь номерует
     //контакты и номера с 1, а не с 0)
-    void DeleteContact(int index)
+    void DeleteContact(int index) throws IndexOutOfBoundsException //("Impossible to")
     {
-        try {
             contacts.remove(index-1);
-        }
-        catch (IndexOutOfBoundsException e)
-        {
-            return;
-        }
     }
     //Редактирование имени контакта по индексу
-    void RedactContactName(int index, String Name, String Surname)
+    void RedactContactName(int index, String Name, String Surname) throws IndexOutOfBoundsException
     {
-        try {
             Contact contact = contacts.get(index - 1);
             if ((Name != "") || (Surname != ""))
                 contact.setName(Name);
             else
                 contact.setName("No Name");
             contact.setSurname(Surname);
-        }
-        catch (IndexOutOfBoundsException e)
-        {
-            return;
-        }
     }
     //Добавление номера к контакту по индексу
-    void AddNumber(int index, String number, Type type)
+    void AddNumber(int index, String number, Type type) throws IndexOutOfBoundsException
     {
-        try {
             Contact contact = contacts.get(index - 1);
             contact.AddNumber(number, type);
-        }
-        catch (IndexOutOfBoundsException e)
-        {
-            return;
-        }
     }
     //Удаление номера из контакта по индексам
-    void DeleteNumber(int contactIndex, int numberIndex)
+    void DeleteNumber(int contactIndex, int numberIndex) throws IndexOutOfBoundsException
     {
-        try {
             Contact contact = contacts.get(contactIndex - 1);
             contact.DeleteNumber(numberIndex - 1);
-        }
-        catch (IndexOutOfBoundsException e)
-        {
-            return;
-        }
     }
     //Поиск во всех контактах по подстроке
     ArrayList<Contact> Search(String substring)
