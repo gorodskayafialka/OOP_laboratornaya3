@@ -25,6 +25,13 @@ public class Main {
 	{
 		System.out.println("Not possible to delete the contact");
 	}
+		try {
+			telephoneBook.DeleteContact(100);
+		}
+		catch (IndexOutOfBoundsException e)
+		{
+			System.out.println("Not possible to delete the contact");
+		}
 	try {
 		telephoneBook.DeleteNumber(1, 3);
 	}
